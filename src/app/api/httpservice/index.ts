@@ -1,1 +1,1 @@
-export { PostHttpService } from './PostHttpService';
+export { PostHttpService } from './post.http.service';

@@ -5,14 +5,12 @@ import { Injectable } from '@angular/core';
 export class CoreHttpParams {
   transformUrl(params: Map<any, any>, url: string): string {
     if (params) {
-      let keys = this.getProperties(params);
-
+      const keys = this.getProperties(params);
       for (let i = 0; i < keys.length; i++) {
-        let value: any = params.get(keys[i]);
+        const value: any = params.get(keys[i]);
         if (value === undefined) {
           url = url.replace(keys[i].toString(), '');
-        }
-        else {
+        } else {
           url = url.replace(keys[i].toString(), value);
         }
       }
@@ -21,8 +19,9 @@ export class CoreHttpParams {
   }
 
 
+
   private getProperties(parameters: Map<any, any>): Array<string> {
-    let properties = [];
+    const properties = [];
     parameters.forEach((value: any, key: any) => {
       properties.push(key);
     });

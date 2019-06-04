@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PostHttpService, IPersonDto } from '../../api';
+import { PostService } from '../../api';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +8,15 @@ import { PostHttpService, IPersonDto } from '../../api';
 })
 export class HomeComponent implements OnInit {
 
-  post: Array<IPersonDto>;
-  constructor(private personService: PostHttpService) { }
+  post: any;
+  constructor(private personService: PostService) { }
 
   ngOnInit() {
-
+    this.personService.getPost().subscribe(data => {
+      this.post = data['body'];
+    });
   }
+
+  get xyz(): string { return JSON.stringify(this.post); }
 
 }

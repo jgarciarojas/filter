@@ -8,17 +8,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>2</td>
-      <td>lowdb</td>
-      <td>2</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>&nbsp</td>
-      <td>&nbsp</td>
-      <td>&nbsp</td>
+    <tr *ngFor="let item of post">
+      <td>{{item.id}}</td>
+      <td>{{item.title}}</td>
+      <td>{{item.country.description}}</td>
+      <td>{{item.author.author}}</td>
     </tr>
   </tbody>
 </table>

@@ -3,4 +3,6 @@ export interface IPersonDto {
     title: string;
     authorId: string;
     countryId: string;
+    country: any;
+    author: any;
 }

@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { PostHttpService } from './httpservice';
+import { PostService } from './services';
 
 @NgModule({
     declarations: [],
     providers: [
-        PostHttpService
+        PostHttpService,
+        PostService
     ],
     imports: [
     ],
@@ -12,5 +14,5 @@ import { PostHttpService } from './httpservice';
     ]
 })
 
-export class AppiModule {
+export class ApiModule {
 }
